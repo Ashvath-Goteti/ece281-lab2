@@ -82,6 +82,7 @@ begin
 	-- Implement the test plan here.  Body of process is continuous from time = 0  
 	test_process : process 
 	begin
+	    w_seg(7) <= '0';
 		-- assign 0 to w_sw, wait, then check the value of seg
 		w_sw <= x"0"; wait for 10 ns;
 		  assert w_seg = "1000000" report "error on x0" severity failure;
@@ -115,6 +116,7 @@ begin
           assert w_seg = "0000110" report "error on xE" severity failure;
         w_sw <= x"F"; wait for 10 ns;
           assert w_seg = "0001110" report "error on xF" severity failure;
+        
         
 
         -- Remaining test cases
